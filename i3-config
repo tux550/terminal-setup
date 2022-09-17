@@ -190,23 +190,29 @@ bindsym $mod+r mode "resize"
 exec "light -N 10"
 # Brightness Mode
 mode "light" {
+	# Keys
 	# Minimum and Max
-	bindsym l exec "light -S 10"
-	bindsym Down exec "light -S 10"
-	binddym k exec "light -S 100"
-	bindsym Up exec "light -S 100"
+	bindsym k exec "light -S 10"
+	bindsym l exec "light -S 100"
 	# Increase and decrease
-	bindsym Right exec "light -A 5"
 	bindcode 47 exec "light -A 5"
-	bindsym Left exec "light -U 5"
+	#bindsym semicolon exec "light -A 5"
 	bindsym j exec "light -U 5"
-	
+
+	#Arrows
+	# Minimum and Max
+        bindsym Down exec "light -S 10"
+        bindsym Up exec "light -S 100"
+        # Increase and decrease
+        bindsym Right exec "light -A 5"
+        bindsym Left exec "light -U 5"
+
 	# Back to normal mode
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
-	bindsym $mod+b mode "default"
+	bindsym $mod+q mode "default"
 }
-bindsym $mod+b mode "light"
+bindsym $mod+q mode "light"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
